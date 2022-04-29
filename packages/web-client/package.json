@@ -1,8 +1,8 @@
 {
-  "name": "remix-template-vercel",
+  "name": "web-client",
   "private": true,
   "description": "",
-  "license": "",
+  "license": "MIT",
   "sideEffects": false,
   "scripts": {
     "build": "remix build",
