@@ -9,6 +9,11 @@
     "dev": "remix dev"
   },
   "dependencies": {
+    "@mantine/core": "^4.2.1",
+    "@mantine/form": "^4.2.1",
+    "@mantine/hooks": "^4.2.1",
+    "@mantine/notifications": "^4.2.1",
+    "@mantine/ssr": "^4.2.1",
     "@remix-run/node": "^1.4.3",
     "@remix-run/react": "^1.4.3",
     "@remix-run/vercel": "^1.4.3",
