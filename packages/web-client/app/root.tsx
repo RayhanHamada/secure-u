@@ -1,3 +1,4 @@
+import { MantineProvider } from '@mantine/core';
 import type { MetaFunction } from '@remix-run/node';
 import {
   Links,
@@ -22,7 +23,13 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <MantineProvider
+          theme={{ colorScheme: 'dark' }}
+          withGlobalStyles
+          withNormalizeCSS
+        >
+          <Outlet />
+        </MantineProvider>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
