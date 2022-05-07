@@ -4,7 +4,7 @@ type Props = {
   opened: boolean;
 };
 
-const SideNavbar: React.FC<Props> = ({ opened }) => {
+const DashboardSideNavbar: React.FC<Props> = ({ opened }) => {
   return (
     <Navbar
       p="lg"
@@ -21,4 +21,4 @@ const SideNavbar: React.FC<Props> = ({ opened }) => {
   );
 };
 
-export default SideNavbar;
+export default DashboardSideNavbar;

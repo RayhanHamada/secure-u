@@ -11,7 +11,7 @@ type Props = {
   burgerOnClick: () => unknown;
 };
 
-const AppHeader: React.FC<Props> = ({ opened, burgerOnClick }) => {
+const DashboardHeader: React.FC<Props> = ({ opened, burgerOnClick }) => {
   const theme = useMantineTheme();
   return (
     <Header height={70} p="md">
@@ -48,4 +48,4 @@ const AppHeader: React.FC<Props> = ({ opened, burgerOnClick }) => {
   );
 };
 
-export default AppHeader;
+export default DashboardHeader;
