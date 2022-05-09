@@ -1,4 +1,5 @@
-import { MantineProvider } from '@mantine/core';
+import type { ColorScheme } from '@mantine/core';
+import { ColorSchemeProvider, MantineProvider } from '@mantine/core';
 import type { MetaFunction } from '@remix-run/node';
 import {
   Links,
@@ -8,6 +9,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
+import { useState } from 'react';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -16,6 +18,10 @@ export const meta: MetaFunction = () => ({
 });
 
 export default function App() {
+  const [colorScheme, setColorScheme] = useState<ColorScheme>('light');
+  const toggleColorScheme = () =>
+    setColorScheme(colorScheme === 'dark' ? 'light' : 'dark');
+
   return (
     <html lang="en">
       <head>
@@ -23,13 +29,18 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <MantineProvider
-          theme={{ colorScheme: 'dark' }}
-          withGlobalStyles
-          withNormalizeCSS
+        <ColorSchemeProvider
+          colorScheme={colorScheme}
+          toggleColorScheme={toggleColorScheme}
         >
-          <Outlet />
-        </MantineProvider>
+          <MantineProvider
+            theme={{ colorScheme: 'dark' }}
+            withGlobalStyles
+            withNormalizeCSS
+          >
+            <Outlet />
+          </MantineProvider>
+        </ColorSchemeProvider>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
