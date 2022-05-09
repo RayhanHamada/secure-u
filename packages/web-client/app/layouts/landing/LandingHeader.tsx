@@ -1,10 +1,8 @@
-import { ActionIcon, Header, Text, useMantineColorScheme } from '@mantine/core';
-import { MoonStars, Sun } from 'tabler-icons-react';
+import { Header, Text, useMantineColorScheme } from '@mantine/core';
+import ThemeSwitchButton from '~/components/ThemeSwitchButton';
 
 const LandingHeader: React.FC = () => {
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-
-  const isDark = colorScheme === 'dark';
+  const { colorScheme } = useMantineColorScheme();
 
   return (
     <Header
@@ -39,14 +37,7 @@ const LandingHeader: React.FC = () => {
             justifyContent: 'space-between',
           }}
         >
-          <ActionIcon
-            variant="outline"
-            color={isDark ? 'yellow' : 'blue'}
-            onClick={() => toggleColorScheme()}
-            title="Toggle color scheme"
-          >
-            {isDark ? <Sun size={18} /> : <MoonStars size={18} />}
-          </ActionIcon>
+          <ThemeSwitchButton />
         </div>
       </div>
     </Header>

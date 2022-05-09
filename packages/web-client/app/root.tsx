@@ -34,7 +34,7 @@ export default function App() {
           toggleColorScheme={toggleColorScheme}
         >
           <MantineProvider
-            theme={{ colorScheme: 'dark' }}
+            theme={{ colorScheme }}
             withGlobalStyles
             withNormalizeCSS
           >

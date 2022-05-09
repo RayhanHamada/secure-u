@@ -29,9 +29,5 @@ export default function Index() {
     console.log(data);
   }, [data]);
 
-  return (
-    <LandingAppShell>
-      <p>Hello Landing1111</p>
-    </LandingAppShell>
-  );
+  return <LandingAppShell></LandingAppShell>;
 }
