@@ -1,6 +1,4 @@
-import type { ColorScheme } from '@mantine/core';
 import { ColorSchemeProvider, MantineProvider } from '@mantine/core';
-import { useHotkeys, useLocalStorage } from '@mantine/hooks';
 import type { MetaFunction } from '@remix-run/node';
 import {
   Links,
@@ -10,6 +8,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
+import useColorSchemeFromLocalStorage from './hooks/useColorSchemeFromLocalStorage';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -18,16 +17,7 @@ export const meta: MetaFunction = () => ({
 });
 
 export default function App() {
-  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
-    key: 'mantine-color-scheme',
-    defaultValue: 'dark',
-    getInitialValueInEffect: true,
-  });
-
-  const toggleColorScheme = (value?: ColorScheme) =>
-    setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
-
-  useHotkeys([['mod+J', () => toggleColorScheme()]]);
+  const { colorScheme, toggleColorScheme } = useColorSchemeFromLocalStorage();
 
   return (
     <html lang="en">
