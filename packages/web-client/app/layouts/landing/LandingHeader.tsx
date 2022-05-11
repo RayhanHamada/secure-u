@@ -1,8 +1,13 @@
 import { Header, Text, useMantineColorScheme } from '@mantine/core';
+import { useEffect } from 'react';
 import ThemeSwitchButton from '~/components/ThemeSwitchButton';
 
 const LandingHeader: React.FC = () => {
   const { colorScheme } = useMantineColorScheme();
+
+  useEffect(() => {
+    console.log(colorScheme);
+  }, [colorScheme]);
 
   return (
     <Header

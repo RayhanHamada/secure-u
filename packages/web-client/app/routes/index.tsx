@@ -1,3 +1,4 @@
+import { Container, Text } from '@mantine/core';
 import type { LoaderFunction } from '@remix-run/node';
 import { json, redirect } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
@@ -29,5 +30,11 @@ export default function Index() {
     console.log(data);
   }, [data]);
 
-  return <LandingAppShell></LandingAppShell>;
+  return (
+    <LandingAppShell>
+      <Container>
+        <Text>Hello World</Text>
+      </Container>
+    </LandingAppShell>
+  );
 }
