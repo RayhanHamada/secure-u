@@ -1,5 +1,7 @@
-import { Header, Text, useMantineColorScheme } from '@mantine/core';
+import { Header, Space, Text, useMantineColorScheme } from '@mantine/core';
 import ThemeSwitchButton from '~/components/Header/ThemeSwitchButton';
+import SignInButton from '~/components/LandingHeader/SignInButton';
+import SignUpButton from '~/components/LandingHeader/SignUpButton';
 
 const LandingHeader: React.FC = () => {
   const { colorScheme } = useMantineColorScheme();
@@ -37,6 +39,10 @@ const LandingHeader: React.FC = () => {
             justifyContent: 'space-between',
           }}
         >
+          <SignInButton />
+          <Space w="sm" />
+          <SignUpButton />
+          <Space w="sm" />
           <ThemeSwitchButton />
         </div>
       </div>
