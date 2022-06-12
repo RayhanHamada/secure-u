@@ -1,7 +1,7 @@
 {
-  "name": "resful-api",
+  "name": "rest-api",
   "version": "0.0.0",
-  "description": "Restful API for Secure-u",
+  "description": "Rest API for Secure-u",
   "scripts": {
     "start": "node dist/index.js",
     "dev": "nodemon"
