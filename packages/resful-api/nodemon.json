@@ -1,0 +1,6 @@
+{
+  "exec": "ts-node --swc src/index.ts",
+  "watch": ["src"],
+  "ext": "*",
+  "ignore": ["node_modules"]
+}

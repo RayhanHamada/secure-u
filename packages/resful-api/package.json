@@ -2,7 +2,17 @@
   "name": "resful-api",
   "version": "0.0.0",
   "description": "Restful API for Secure-u",
-  "scripts": {},
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "nodemon"
+  },
   "author": "Muhammad Rayhan Hamada Budiman <rayhanhamada1999@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@swc/core": "^1.2.198",
+    "@types/node": "^17.0.42",
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3"
+  }
 }
